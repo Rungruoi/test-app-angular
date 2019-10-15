@@ -1,0 +1,22 @@
+<app-sidebar></app-sidebar>
+<div style="margin-left:20%">
+    <div class="w3-container w3-teal">
+        <h1>Member</h1>
+    </div>
+    <div class="w3-container">  
+        <div class="container">        
+            <div class="row" style="margin-top: 5%;">
+                    <div class="card" style="width: 18rem; margin-left: 3%;" *ngFor="let listMember of member" >
+                            <img class="card-img-top" src="https://s3.amazonaws.com/uifaces/faces/twitter/bruno_mart/128.jpg" height="150" alt="Card image cap">
+                            <div class="card-body">
+                              <h5 class="card-title">{{ listMember.name }}</h5>
+                              <p class="card-text">{{ listMember.information }}</p>
+                              <p class="card-text">{{ listMember.date_of_birth }}</p> 
+                              <a href="#" class="btn btn-warning">Edit</a>
+                              &nbsp;<a href="#" class="btn btn-danger">Remove</a>
+                            </div>
+                          </div>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,52 @@
+<app-sidebar></app-sidebar>
+<div style="margin-left:20%">
+  <div class="w3-container w3-teal">
+    <h1>Add-Project</h1>
+  </div>
+  <div class="w3-container">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+        <div class="col-md-6">       
+            <label for="email">Name</label>
+            <input type="text" class="form-control">     
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="email">Information</label>
+            <input type="text" class="form-control">
+          </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+              <label for="email">Status</label>
+              <select name="repeatSelect" id="repeatSelect" ng-model="data.model" class="form-control">
+                  <option value="1">planned</option>
+                  <option value="2">junior</option>
+                  <option value="3">doing</option>
+                  <option value="4">done</option>
+                  <option value="5">cancelled</option>
+              </select>
+            </div>
+        </div> 
+        <div class="col-md-6">
+            <div class="form-group">
+              <label for="email">Type</label>
+              <br>
+              <input type="radio" name="type"> lab
+              <input type="radio" name="type"> single
+              <input type="radio" name="type"> acceptance
+            </div>
+        </div>
+
+        <div class="col-md-4">
+  <button type="button" (click)="save()" class="btn btn-success">Lưu lại</button>
+  <button type="button" (click)="clear()" class="btn btn-danger"><a routerLink="/">Hủy</a></button>
+  </div>
+  </div>
+</div>
+</div>
+
+
+<!-- </form> -->

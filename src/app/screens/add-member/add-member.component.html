@@ -1,0 +1,75 @@
+<app-sidebar></app-sidebar>
+<div style="margin-left:20%">
+  <div class="w3-container w3-teal">
+    <h1>Add-Member</h1>
+  </div>
+  <div class="w3-container">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="col-md-6">
+        <div class="col-md-6">       
+       
+            <label for="email">Name</label>
+            <input type="text" class="form-control">
+          
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="email">Information</label>
+            <input type="text" class="form-control">
+          </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+              <label for="email">Phone number</label>
+              <input type="text" class="form-control">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+              <label for="email">Date of birth</label>
+              <select name="repeatSelect" id="repeatSelect" ng-model="data.model" class="form-control">
+                  <option value="1">intern</option>
+                  <option value="2">junior</option>
+                  <option value="3">senior</option>
+                  <option value="4">project manager</option>
+                  <option value="5">ceo</option>
+                  <option value="6">cto</option>
+                  <option value="7">bo</option>
+              </select>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+              <label for="email">Date of birth</label>
+              <input type="date" class="form-control">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+              <label for="email">Gender</label>
+              <br>
+              <input type="radio" name="gender" > Female
+              <input type="radio" name="gender"> Male
+            </div>
+        </div>
+
+        <div class="col-md-4">
+  <button type="button" (click)="save()" class="btn btn-success">Lưu lại</button>
+  <button type="button" (click)="clear()" class="btn btn-danger"><a routerLink="/">Hủy</a></button>
+  </div>
+  </div>
+  <div class="col-md-6">
+      <div class="form-group">
+          <label for="pwd">Ảnh danh mục:</label>
+          <input type="file" class="form-control" id="pwd" formControlName=image>    
+        </div>
+  </div>
+</div>
+</div>
+</div>
+
+
+<!-- </form> -->
