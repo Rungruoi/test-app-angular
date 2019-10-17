@@ -1,21 +1,37 @@
 <app-sidebar></app-sidebar>
-<div style="margin-left:20%">
+<div style="margin-left:20%;">
   <div class="w3-container w3-teal">
     <h1>Add-Project</h1>
   </div>
   <div class="w3-container">
-
-    <div class="container">
+    <div class="container" style="margin-top:5%">
       <div class="row">
         <div class="col-md-12">
         <div class="col-md-6">       
             <label for="email">Name</label>
-            <input type="text" class="form-control">     
+            <input type="text" class="form-control" formControlName="name">
+            <div *ngIf="name.invalid && (name.dirty || name.touched)"
+					    class="alert alert-danger">
+
+	 				  <div *ngIf="name.errors.required">
+					    Điền tên danh mục
+					  </div>
+					  <div *ngIf="name.errors.minlength">
+					    Tên danh mục cần ít nhất 4 ký tự
+					  </div>
+					 
+				</div>     
         </div>
         <div class="col-md-6">
           <div class="form-group">
             <label for="email">Information</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" formControlName="information">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="email">Deadline</label>
+            <input type="date" class="form-control">
           </div>
         </div>
         <div class="col-md-6">
@@ -32,21 +48,25 @@
         </div> 
         <div class="col-md-6">
             <div class="form-group">
-              <label for="email">Type</label>
-              <br>
-              <input type="radio" name="type"> lab
-              <input type="radio" name="type"> single
-              <input type="radio" name="type"> acceptance
-            </div>
+                <label for="email">Type</label>
+                <select name="repeatSelect" id="repeatSelect" ng-model="data.model" class="form-control">
+                    <option value="1">lab</option>
+                    <option value="2">single</option>
+                    <option value="3">acceptance</option>
+                </select>
+              </div>
         </div>
 
         <div class="col-md-4">
-  <button type="button" (click)="save()" class="btn btn-success">Lưu lại</button>
-  <button type="button" (click)="clear()" class="btn btn-danger"><a routerLink="/">Hủy</a></button>
-  </div>
+        <button type="button" (click)="save()" class="btn btn-success">Lưu lại</button>
+        <button type="button" (click)="clear()" class="btn btn-danger"><a routerLink="/">Hủy</a></button>
+        </div>
   </div>
 </div>
 </div>
+</div>
+</div>
+  
 
 
 <!-- </form> -->

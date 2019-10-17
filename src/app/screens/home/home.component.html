@@ -1,40 +1,45 @@
 <app-sidebar></app-sidebar>
 <div style="margin-left:20%">
-    <div class="w3-container w3-teal">
-      <h1>Project</h1>
-    </div>
-    <div class="w3-container">
-        <div class="container">
-          <div class="row" style="margin-top: 5%;">
-        <div class="col-xl-3 col-md-6 mb-4" *ngFor="let project of totalProject">
-            <div class="card border-left-primary shadow h-100 py-2">
-              <div class="card-body">
-                <div class="row no-gutters align-items-center">
-                  <div class="col mr-2">
-                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">{{ project.name }}</div>
-                    <h6>Deadline: {{ project.deadline }}</h6>
-                    <div class="h5 mb-0 font-weight-bold text-success" *ngIf=" project.type == 1 ">
-                        Type: lap
-                    </div>
-                    <div class="h5 mb-0 font-weight-bold text-success" *ngIf=" project.type == 2 ">
-                      Type: single
-                    </div>
-                    <div class="h5 mb-0 font-weight-bold text-success" *ngIf=" project.type == 3 ">
-                    Type: acceptance
-                    </div>
-                    <h6 *ngIf=" project.status == 1 ">Status: planned</h6>
-                    <h6 *ngIf=" project.status == 2 ">Status: on hold</h6>
-                    <h6 *ngIf=" project.status == 3 ">Status: doing</h6>
-                    <h6 *ngIf=" project.status == 4 ">Status: done</h6>
-                    <h6 *ngIf=" project.status == 5 ">Status: cancelled</h6>
-                  
+	<div class="w3-container w3-teal">
+		<h1>Project</h1>
+	</div>
+	<div class="w3-container">
+		<div class="container">
+			<div class="row" style="margin-top: 5%;">
+				<div class="col-xl-3 col-md-6 mb-4" *ngFor="let project of
+					totalProject">
+					<div class="card border-left-primary shadow h-100 py-2">
+						<div class="card-body">
+							<div class="row no-gutters align-items-center">
+								<div class="col mr-2">
+									<div class="text-xs font-weight-bold text-primary
+										text-uppercase mb-1"><a
+											routerLink="./project/{{project.id}}">{{ project.name }}</a></div>
+									<h6>Deadline: {{ project.deadline }}</h6>
+									<div class="h5 mb-0 font-weight-bold text-success" *ngIf="project.type
+										== 1">
+										Type: lap
+									</div>
+									<div class="h5 mb-0 font-weight-bold text-success" *ngIf="project.type
+										== 2">
+										Type: single
+									</div>
+									<div class="h5 mb-0 font-weight-bold text-success" *ngIf="project.type
+										== 3">
+										Type: acceptance
+									</div>
+									<h6 *ngIf="project.status == 1">Status: planned</h6>
+									<h6 *ngIf="project.status == 2">Status: on hold</h6>
+									<h6 *ngIf="project.status == 3">Status: doing</h6>
+									<h6 *ngIf="project.status == 4">Status: done</h6>
+									<h6 *ngIf="project.status == 5">Status: cancelled</h6>
+								</div>
+							</div>
 
-                  </div>  
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        </div>
-    </div>
-    </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

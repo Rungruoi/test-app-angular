@@ -7,7 +7,7 @@
         <div class="container">        
             <div class="row" style="margin-top: 5%;">
                     <div class="card" style="width: 18rem; margin-left: 3%;" *ngFor="let listMember of member" >
-                            <img class="card-img-top" src="https://s3.amazonaws.com/uifaces/faces/twitter/bruno_mart/128.jpg" height="150" alt="Card image cap">
+                            <img class="card-img-top image" src="{{ listMember.avatar }}" alt="Card image cap">
                             <div class="card-body">
                               <h5 class="card-title">{{ listMember.name }}</h5>
                               <p class="card-text">{{ listMember.information }}</p>
