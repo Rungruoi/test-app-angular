@@ -1,0 +1,33 @@
+<app-sidebar></app-sidebar>
+<div style="margin-left:20%">
+	<div class="w3-container w3-teal">
+		<h1>Project</h1>
+	</div>
+	<div class="w3-container">
+		<div class="container">
+			<div class="row" style="margin-top: 5%;">
+				<div class="col-xl-3 col-md-6 mb-4" *ngFor="let project of
+					totalProject">
+					<div class="card border-left-primary shadow h-100 py-2">
+						<div class="card-body">
+							<div class="row no-gutters align-items-center">
+								<div class="col mr-2">
+									<div class="text-xs font-weight-bold text-primary
+										text-uppercase mb-1"><a
+											routerLink="./project/{{project.id}}">{{ project.name }}</a></div>
+									<h6 *ngIf="project.deadline != null">Deadline: {{ project.deadline }}</h6>
+									<h6>Type: {{ project.type }}</h6>
+									<h6>Status: {{ project.status }}</h6>
+									<div class="col mr-2">
+										<a routerLink="edit-project/{{ project.id }}" class="btn btn-warning">Edit</a>&nbsp;
+										<button class="btn btn-danger" (click)=remove(project)>Remove</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
