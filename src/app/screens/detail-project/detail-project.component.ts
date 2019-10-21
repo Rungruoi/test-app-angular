@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { DetailprojectService } from './../../service/detailproject.service';
+import {Router, ActivatedRoute, ParamMap} from '@angular/router';
 @Component({
   selector: 'app-detail-project',
   templateUrl: './detail-project.component.html',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailProjectComponent implements OnInit {
 
-  constructor() { }
+  detailProject:any;
+  constructor(
+    private detailService : DetailprojectService,
+    private route:ActivatedRoute,
+  ) { }
 
   ngOnInit() {
+    let Id = this.route.snapshot.params.id;
+    this.detailService.detail(Id).subscribe((data=>{
+      this.detailProject = data;
+      console.log(data);
+    }));
   }
-
 }

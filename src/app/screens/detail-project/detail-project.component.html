@@ -1,1 +1,22 @@
-<p>detail-project works!</p>
+<app-sidebar></app-sidebar>
+<div style="margin-left:20%">
+    <div class="w3-container w3-teal">
+        <h1>Detail Project</h1>
+    </div>
+    <div class="w3-container">
+        <div class="container">
+            <button class="btn btn-success" style="margin-top:10px">Add member</button>
+            <div class="row" style="margin-top: 5%;">
+                <div class="card" style="width: 18rem; margin-left: 3%;"
+                    *ngFor="let detail of detailProject">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ detail.member.name }}</h5>
+                        <p class="card-text">Role: {{ detail.role }}</p>
+                        <a routerLink="/edit-member/{{ detail.id }}"  class="btn btn-warning">Edit</a>
+                              &nbsp;<a href="#" class="btn btn-danger">Remove</a>
+                    </div>                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
