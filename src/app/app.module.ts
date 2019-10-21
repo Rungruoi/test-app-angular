@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
 import { Observable } from "rxjs";
+import { FileUploadModule } from 'ng2-file-upload';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { AddMemberComponent } from './screens/add-member/add-member.component';
 import { EditMemberComponent } from './screens/edit-member/edit-member.component';
 import { AddProjectComponent } from './screens/add-project/add-project.component';
 import { EditProjectComponent } from './screens/edit-project/edit-project.component';
+import { DetailProjectComponent } from './screens/detail-project/detail-project.component';
 
 @NgModule({
   declarations: [
@@ -23,13 +25,15 @@ import { EditProjectComponent } from './screens/edit-project/edit-project.compon
     AddMemberComponent,
     EditMemberComponent,
     AddProjectComponent,
-    EditProjectComponent
+    EditProjectComponent,
+    DetailProjectComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FileUploadModule
   ],
   providers: [],
   bootstrap: [AppComponent]

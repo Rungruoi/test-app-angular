@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CallapiService } from './../../service/callapi.service';
-
+import { MemberapiService } from './../../service/memberapi.service';
 @Component({
   selector: 'app-member',
   templateUrl: './member.component.html',
@@ -9,7 +8,7 @@ import { CallapiService } from './../../service/callapi.service';
 export class MemberComponent implements OnInit {
   member : any;
   constructor(
-    private apiService : CallapiService,
+    private apiService : MemberapiService,
   ) { }
 
   ngOnInit() {

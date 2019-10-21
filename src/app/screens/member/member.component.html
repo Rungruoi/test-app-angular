@@ -14,7 +14,7 @@
                               <p class="card-text">Date of birth:{{ listMember.date_of_birth }}</p>
                               <p class="card-text">Position: {{ listMember.position }}</p>
                               <p class="card-text">Gender: {{ listMember.gender }}</p>
-                              <a href="#" class="btn btn-warning">Edit</a>
+                              <a routerLink="/edit-member/{{ listMember.id }}"  class="btn btn-warning">Edit</a>
                               &nbsp;<a href="#" class="btn btn-danger">Remove</a>
                             </div>
                           </div>

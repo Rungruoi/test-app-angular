@@ -4,27 +4,41 @@
     <h1>Add-Member</h1>
   </div>
   <div class="w3-container">
-
     <div class="container create-member">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="col-md-6">
-            <div class="col-md-6">
-              <label for="email">Name</label>
-              <input type="text" class="form-control">
-            </div>
-            
+      <form [formGroup]="member" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-md-12">
+
             <div class="col-md-6">
               <div class="form-group">
-                <label for="email">Phone number</label>
-                <input type="text" class="form-control">
+              <label for="email">Name<span class="text-danger">*</span></label>
+              <input type="text" class="form-control" formControlName= name>
+              <span *ngIf="name.invalid && (name.dirty
+                ||name.touched)" class="text-danger">
+                <span *ngIf="name.errors.required">
+                  Tên không được để trống
+                </span>
+                <span *ngIf="name.errors.maxlength">
+                  Tên không được quá 50 ký tự
+                </span>
+              </span>
               </div>
-            </div>
-            <div class="col-md-6">
               <div class="form-group">
-                <label for="email">Date of birth</label>
+                <label for="email">Phone number<span class="text-danger">*</span></label>
+                <input type="text" class="form-control" formControlName=
+                  phone>
+                  <span *ngIf="phone.invalid && (phone.dirty
+                ||phone.touched)" class="text-danger">
+                <span *ngIf="phone.errors.required">
+                  Không được để trống
+                </span>
+                </span>
+              </div>
+              <div class="form-group">
+                <label for="email">Position<span class="text-danger">*</span></label>
                 <select name="repeatSelect" id="repeatSelect"
-                  ng-model="data.model" class="form-control">
+                  ng-model="data.model" class="form-control" formControlName=
+                  position>
                   <option value="1">intern</option>
                   <option value="2">junior</option>
                   <option value="3">senior</option>
@@ -33,52 +47,66 @@
                   <option value="6">cto</option>
                   <option value="7">bo</option>
                 </select>
+                <span *ngIf="position.invalid && (position.dirty
+                ||position.touched)" class="text-danger">
+                <span *ngIf="position.errors.required">
+                  Không được để trống
+                </span>
+                </span>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <label for="email">Date of birth</label>
-                <input type="date" class="form-control">
+                <label for="email">Date of birth<span class="text-danger">*</span></label>
+                <input type="date" class="form-control" formControlName= dob>
+                <span *ngIf="dob.invalid && (dob.dirty
+                ||dob.touched)" class="text-danger">
+                <span *ngIf="dob.errors.required">
+                  Không được để trống
+                </span>
+                </span>
               </div>
-            </div>
-            <div class="col-md-6">
               <div class="form-group">
-                <label for="email">Gender</label>
-                <br>
+                <label for="email">Gender<span class="text-danger">*</span></label>
                 <select name="repeatSelect" id="repeatSelect"
-                ng-model="data.model" class="form-control">
-                <option value="gender">gender</option>
-                <option value="Male">Male</option>
-              </select>
+                  class="form-control" formControlName= gender>
+                  <option value="gender">gender</option>
+                  <option value="Male">Male</option>
+                </select>
+                <span *ngIf="gender.invalid && (gender.dirty
+                ||gender.touched)" class="text-danger">
+                <span *ngIf="gender.errors.required">
+                  Không được để trống
+                </span>
+                </span>
               </div>
+              <div class="form-group">
+                <label for="pwd">Ảnh danh mục<span class="text-danger">*</span></label>
+                <input type="file" class="form-control"
+                  id="pwd" formControlName=avatar>
+                  <span *ngIf="avatar.invalid && (avatar.dirty
+                ||avatar.touched)" class="text-danger">
+                <span *ngIf="avatar.errors.required">
+                  Không được để trống
+                </span>
+                </span>
+              </div> 
             </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                  <label for="pwd">Ảnh danh mục:</label>
-                  <input type="file" class="form-control" 
-                  id="pwd" formControlName=image>
-                </div>
-              </div>
-            <div class="col-md-4">
-              <button type="button" (click)="save()" class="btn btn-success">Lưu
-                lại</button>&nbsp;
-              <button type="button" (click)="clear()" class="btn btn-danger">
-                <a routerLink="/">Hủy</a></button>
-            </div>
-          </div>
-          
-          <div class="col-md-6">
+            <div class="col-md-6" style="float:right;">
               <div class="form-group">
                 <label for="email">Information</label>
-                <textarea type="text" class="form-control" rows="5">
-                  </textarea>
+                <textarea type="text" class="form-control" rows="5"
+                  formControlName= information>
+                </textarea>
               </div>
+              <button type="button"  (click)="saveMember()" class="btn btn-success">Lưu
+                  lại</button>&nbsp;
+                <button type="button" (click)="clear()" class="btn btn-danger">
+                  <a routerLink="/">Hủy</a></button>
             </div>
+          </div>
         </div>
-      </div>
+      </form>
     </div>
   </div>
 </div>
-
-
-<!-- </form> -->

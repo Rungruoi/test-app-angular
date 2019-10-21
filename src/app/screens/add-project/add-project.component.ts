@@ -24,7 +24,6 @@ export class AddProjectComponent implements OnInit {
         Validators.maxLength(50)
       ]),
       information: new FormControl('', [
-        Validators.required,
         Validators.maxLength(300)
       ]),
       deadline: new FormControl('', [

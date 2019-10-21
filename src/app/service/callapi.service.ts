@@ -27,8 +27,4 @@ export class CallapiService {
   {
     return this.http.post<any>(`${this.ApiUrl}/project/add`,data);
   }
-  getMember()
-  {
-    return this.http.get(`${this.ApiUrl}/member`);
-  }
 }

@@ -7,11 +7,17 @@ import { AddMemberComponent } from './screens/add-member/add-member.component';
 import { AddProjectComponent } from './screens/add-project/add-project.component';
 import { EditMemberComponent } from './screens/edit-member/edit-member.component';
 import { EditProjectComponent } from './screens/edit-project/edit-project.component';
+import { DetailProjectComponent } from './screens/detail-project/detail-project.component';
+
 
 const routes: Routes = [
   {
     path : "",
     component : HomeComponent
+  },
+  {
+    path : "project/:id",
+    component : DetailProjectComponent
   },
   {
     path : "add-project",
