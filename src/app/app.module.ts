@@ -28,7 +28,8 @@ import { EditProjectComponent } from './screens/edit-project/edit-project.compon
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

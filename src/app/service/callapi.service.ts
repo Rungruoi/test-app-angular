@@ -15,13 +15,17 @@ export class CallapiService {
   {
     return this.http.get(`${this.ApiUrl}/project`);            
   }
+  getProject(id)
+  {
+    return this.http.get<any>(`${this.ApiUrl}/project/${id}`);
+  }
   editProject(id, data)
   {
-    return this.http.put<any>(`${this.ApiUrl}/project/${id}`, data);
+    return this.http.put<any>(`${this.ApiUrl}/project/${id}/edit`, data);
   }
   addProject(data)
   {
-    return this.http.post<any>(this.ApiUrl,data);
+    return this.http.post<any>(`${this.ApiUrl}/project/add`,data);
   }
   getMember()
   {

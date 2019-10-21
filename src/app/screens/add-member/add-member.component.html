@@ -13,12 +13,7 @@
               <label for="email">Name</label>
               <input type="text" class="form-control">
             </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="email">Information</label>
-                <input type="text" class="form-control">
-              </div>
-            </div>
+            
             <div class="col-md-6">
               <div class="form-group">
                 <label for="email">Phone number</label>
@@ -50,24 +45,35 @@
               <div class="form-group">
                 <label for="email">Gender</label>
                 <br>
-                <input type="radio" name="gender"> Female
-                <input type="radio" name="gender"> Male
+                <select name="repeatSelect" id="repeatSelect"
+                ng-model="data.model" class="form-control">
+                <option value="gender">gender</option>
+                <option value="Male">Male</option>
+              </select>
               </div>
             </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                  <label for="pwd">Ảnh danh mục:</label>
+                  <input type="file" class="form-control" 
+                  id="pwd" formControlName=image>
+                </div>
+              </div>
             <div class="col-md-4">
               <button type="button" (click)="save()" class="btn btn-success">Lưu
-                lại</button>
+                lại</button>&nbsp;
               <button type="button" (click)="clear()" class="btn btn-danger">
                 <a routerLink="/">Hủy</a></button>
             </div>
           </div>
+          
           <div class="col-md-6">
-            <div class="form-group">
-              <label for="pwd">Ảnh danh mục:</label>
-              <input type="file" class="form-control" 
-              id="pwd" formControlName=image>
+              <div class="form-group">
+                <label for="email">Information</label>
+                <textarea type="text" class="form-control" rows="5">
+                  </textarea>
+              </div>
             </div>
-          </div>
         </div>
       </div>
     </div>

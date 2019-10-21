@@ -1,1 +1,95 @@
-<p>edit-project works!</p>
+<app-sidebar></app-sidebar>
+<div style="margin-left:20%;">
+    <div class="w3-container w3-teal">
+        <h1>Edit-Project: </h1>
+    </div>
+    <div class="w3-container">
+        <div class="container" style="margin-top:5%">
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Name</label>
+                                <input type="email" class="form-control"
+                                    formControlName= name>
+                                <span *ngIf="name.invalid && (name.dirty
+                                    ||name.touched)" class="text-danger">
+                                    <span *ngIf="name.errors.required">
+                                        Tên project không được để trống
+                                    </span>
+                                    <span *ngIf="name.errors.maxlength">
+                                        Tên project không được quá 10 ký tự
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Information</label>
+                                <textarea type="text" formControlName= information class="form-control">
+                                </textarea>
+                                <span *ngIf="information.invalid &&
+                                    (information.dirty
+                                    ||information.touched)" class="text-danger">
+                                    <span *ngIf="information.errors.maxlength">
+                                        Thông tin không quá 300 ký tự
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Deadline {{ today }}</label>
+                                <input type="date" class="form-control" min="2019-10-18" 
+                                    formControlName= deadline>
+                                <span *ngIf="deadline.invalid && (deadline.dirty
+                                    ||deadline.touched)" class="text-danger">
+                                    <span *ngIf="deadline.errors.required">
+                                        Thông tin không quá 300 ký tự
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Type</label>
+                                <select name="repeatSelect" id="repeatSelect"
+                                    class="form-control" formControlName= type>
+                                    <option value="lab">lab</option>
+                                    <option value="single">single</option>
+                                    <option value="acceptance">acceptance</option>
+                                </select>
+                                <span *ngIf="type.invalid && (type.dirty
+                                    ||type.touched)" class="text-danger">
+                                    <span *ngIf="type.errors.required">
+                                        Status không được để trống
+                                    </span>
+                                </span>
+                            </div>
+                        <div class="form-group">
+                            <label for="email">Status</label>
+                            <select name="repeatSelect" id="repeatSelect"
+                                class="form-control" formControlName=
+                                status>
+                                <option value="planned">planned</option>
+                                <option value="junior">junior</option>
+                                <option value="doing">doing</option>
+                                <option value="done">done</option>
+                                <option value="cancelled">cancelled</option>
+                            </select>
+                            <span *ngIf="status.invalid && (status.dirty
+                                ||status.touched)" class="text-danger">
+                                <span *ngIf="status.errors.required">
+                                    Status không được để trống
+                                </span>
+                            </span>
+                        </div>                             
+                            <br>
+                            <button type="button" 
+                                class="btn
+                                btn-success" [disabled]="form.invalid" (click)="saveEdit()">Lưu lại</button>&nbsp;
+                            <button type="button" (click)="clear()"
+                                class="btn
+                                btn-danger"><a routerLink="/">Hủy</a></button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
