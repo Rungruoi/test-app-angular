@@ -20,7 +20,16 @@ export class HomeComponent implements OnInit {
     });
   }
  
-  
-  
- 
+  remove(project){
+    if(confirm("Bạn có muốn xóa project này?")){
+      this.apiService.removeProject(project.id)
+      .subscribe((data) => {
+        console.log(data);
+        this.totalProject = this.totalProject.filter(
+          (item) => item.id != project.id
+          )
+      });
+    }
+  }
+
 }

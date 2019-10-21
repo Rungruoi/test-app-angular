@@ -27,4 +27,8 @@ export class CallapiService {
   {
     return this.http.post<any>(`${this.ApiUrl}/project/add`,data);
   }
+  removeProject(id)
+  {
+    return this.http.delete<any>(`${this.ApiUrl}/project/${id}/delete`);
+  }
 }
