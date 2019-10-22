@@ -16,4 +16,8 @@ export class DetailprojectService {
   {
     return this.http.get<any>(`${this.Detail}/${id}/list-member`);
   }
+  removeMember(id, idMember)
+  {
+  	return this.http.delete<any>(`${this.Detail}/${id}/remove-member/${idMember}`);
+  }
 }

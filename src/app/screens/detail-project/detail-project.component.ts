@@ -14,11 +14,23 @@ export class DetailProjectComponent implements OnInit {
     private route:ActivatedRoute,
   ) { }
 
+  Id:any;
   ngOnInit() {
-    let Id = this.route.snapshot.params.id;
-    this.detailService.detail(Id).subscribe((data=>{
+    this.Id = this.route.snapshot.paramMap.get('id');
+    this.detailService.detail(this.Id).subscribe((data=>{
       this.detailProject = data;
       console.log(data);
     }));
+  }
+
+  remove(detail){
+    if(confirm("Bạn có muốn xóa thành viên này trong dự án?")){
+      this.detailService.removeMember(this.Id,detail.member_id)
+      .subscribe((data) => {
+        this.detailProject = this.detailProject.filter(
+          (item) => item.id != detail.id
+          )
+      });
+    }
   }
 }

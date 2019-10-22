@@ -12,9 +12,10 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ detail.member.name }}</h5>
                         <p class="card-text">Role: {{ detail.role }}</p>
-                        <a routerLink="/edit-member/{{ detail.id }}"  class="btn btn-warning">Edit</a>
-                              &nbsp;<a href="#" class="btn btn-danger">Remove</a>
-                    </div>                   
+                        <a routerLink="edit-project/{{ detail.id }}" class="btn
+                            btn-warning">Edit</a>&nbsp;
+                            <button class="btn btn-danger" (click)=remove(detail)>Remove</button>
+                    </div>
                 </div>
             </div>
         </div>
